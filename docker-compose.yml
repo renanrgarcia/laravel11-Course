@@ -63,6 +63,17 @@ services:
         image: redis:latest
         networks:
             - laravel
+    
+    # node 
+    node:
+        image: node:latest
+        volumes:
+            - ./:/var/www
+        working_dir: /var/www
+        ports:
+            - "3000:3000"
+        networks:
+            - laravel
 
 networks:
     laravel:

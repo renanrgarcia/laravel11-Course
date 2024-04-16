@@ -13,4 +13,8 @@ class UserController extends Controller
         // dd($users); // it's used to dump and die, util to see the output and debug
         return view('admin.users.index', compact('users'));
     }
+
+    public function create() {
+        return view('admin.users.create');
+    }
 }

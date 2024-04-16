@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index() {
-        $user = User::first();
-        return view('admin.users.index', compact('user'));
+        $users = User::paginate(15); //User::all(); // can be get(). Returns a collection, specific type of array
+        // dd($users); // it's used to dump and die, util to see the output and debug
+        return view('admin.users.index', compact('users'));
     }
 }

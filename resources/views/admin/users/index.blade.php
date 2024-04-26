@@ -7,6 +7,10 @@
 
   <a href="{{ route('users.create') }}">Create User</a>
 
+  @if (session()->has('success'))
+    {{ session('success') }}
+  @endif
+
   <table>
     <thead>
       <tr>

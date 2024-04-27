@@ -25,4 +25,16 @@ class UserController extends Controller
             ->route('users.index')
             ->with('success', 'User created successfully');
     }
+
+    public function edit(string $id) {
+        // $user = User::where('id', '=', $id)->first();
+        // $user = User::where('id', $id)->first(); // to API is common ->firstOrFail()
+        if (!$user = User::find($id)) {
+            return redirect()
+                ->route('users.index')
+                ->with('error', 'User not found');
+        }
+
+        return view('admin.users.edit', compact('user'));
+    }
 }

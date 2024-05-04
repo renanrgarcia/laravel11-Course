@@ -13,6 +13,6 @@
     <input type="text" name="name" placeholder="Name" value="{{ old('name') }}">
     <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
     <input type="password" name="password" placeholder="Password">
-    <button type="submit">Create</button>
+    <button type="submit">Submit</button>
   </form>
 @endsection
